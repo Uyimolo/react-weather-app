@@ -5,6 +5,7 @@ const CurrentWeather = ({ data }) => {
   const month = new Date().getMonth() + 1;
   const day = new Date().getUTCDate();
   const now = `${day}-${month}-${year}`;
+
   return (
     <div className="current-weather">
       <div className="weather-icon-wrapper">
@@ -20,12 +21,11 @@ const CurrentWeather = ({ data }) => {
         <div className="circle-seperator"></div>
         <p>{now}</p>
       </div>
-
       <div className="location">
         <p>{data.name}</p>
       </div>
 
-      <Highlights data={data}/>
+      <Highlights data={data} />
     </div>
   );
 };
