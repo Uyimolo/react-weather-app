@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import CurrentWeather from "./components/CurrentWeather";
+import useFetch from "./hooks/useFetch";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [location, setLocation] = useState(null);
+
+  let data = useFetch(location);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }, []);
+
+  const showPosition = (position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    setLocation({
+      lat,
+      lon,
+    });
+  };
+
+  return <div className="container">{data && <CurrentWeather data={data} />}</div>;
 }
 
 export default App;
