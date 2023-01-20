@@ -10,12 +10,30 @@
 :root {
   font-size: 16px;
   --bg : #1e213af3;
+  --bgDark : #0b0c14f3;
   --text : #ffffff;
   --text-dark : #d6d6d6;
 }
 body {
   background-color: var(--bg);
+  height: fit-content;
 }
 .container {
   color: var(--text);
+  background-color: var(--bg);
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    position:absolute;
+    inset: 0 0 0 0;
+    margin: auto;
+    width: 100%;
+    height: 650px;
+    max-width: 1200px;
+    /* margin:0 auto; */
+    display: flex;
+    /* height: 100vh; */
+  }
+  
 }
