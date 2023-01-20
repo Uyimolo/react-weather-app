@@ -1,11 +1,16 @@
+import { daysArray } from "../arrays&objects/timeArray";
+import { monthArray } from "../arrays&objects/timeArray";
 import "../currentWeather.css";
 import Highlights from "./Highlights";
+
 const CurrentWeather = ({ data }) => {
   const year = new Date().getFullYear();
-  const month = new Date().getMonth() + 1;
-  const day = new Date().getUTCDate();
+  const month =monthArray[new Date().getMonth()] ;
+  const day = new Date().getDate();
   const now = `${day}-${month}-${year}`;
 
+  const today = daysArray[new Date().getDay()];
+  console.log(today);
   return (
     <div className="current-weather">
       <div className="weather-icon-wrapper">
@@ -19,7 +24,7 @@ const CurrentWeather = ({ data }) => {
       <div className="date">
         <p>Today</p>
         <div className="circle-seperator"></div>
-        <p>{now}</p>
+        <p>{`${today}, ${now}`}</p>
       </div>
       <div className="location">
         <p>{data.name}</p>
