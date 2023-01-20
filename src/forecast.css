@@ -1,0 +1,49 @@
+.forecast {
+  background-color: var(--bgDark);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.forecast-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+}
+.forecast-card {
+  width: 145px;
+  padding: 1rem 0;
+  background-color: var(--bg);
+  border-radius: 5px;
+}
+.forecast-card .temp {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp .real-temp {
+    font-weight: 600;
+}
+.forecast-card .temp .feels-like {
+    color: var(--text-dark);
+    font-size: .8rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .forecast {
+    flex-basis: 60%;
+  }
+  .forecast-cards {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+  }
+  .forecast-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
