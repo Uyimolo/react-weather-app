@@ -3,17 +3,23 @@
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  padding: 1rem 1rem 4rem;
+  padding: 1rem 1rem 0rem;
+  /* background-color: #fff; */
+}
+
+.search {
+  width: 100%;
+  color: black;
 }
 
 .weather-icon-wrapper {
-  height: 8rem;
+  height: 7rem;
   overflow: hidden;
-  margin-bottom: 1rem;
+  /* background: #000; */
 }
 
 .current-weather img {
-  width: 14rem;
+  width: 9rem;
 }
 
 .current-temperature {
@@ -24,6 +30,7 @@
   font-size: 1.5em;
   color: var(--text-dark);
   font-weight: 600;
+  margin-top: 1rem;
 }
 
 .date {
@@ -46,7 +53,7 @@
 }
 
 .highlights {
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
   width: 100%;
   text-align: center;
 }
@@ -74,7 +81,7 @@
 
 @media only screen and (min-width: 1024px) {
   .current-weather {
-    flex-basis:40%;
+    flex-basis: 40%;
     padding: 2rem 4rem !important;
   }
 }

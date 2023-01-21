@@ -4,8 +4,8 @@ const ForecastCard = ({ time, temperature, feelsLike, icon }) => {
       <h3>{time}</h3>
       <img src={`images/${icon}.svg`} alt="weather icon" />
       <div className="temp">
-        <p className="real-temp">{temperature}</p>
-        <p className="feels-like">{feelsLike}</p>
+        <p className="real-temp">{temperature}°c</p>
+        <p className="feels-like">{feelsLike}°c</p>
       </div>
     </div>
   );

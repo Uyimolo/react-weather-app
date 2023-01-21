@@ -2,17 +2,20 @@ import { daysArray } from "../arrays&objects/timeArray";
 import { monthArray } from "../arrays&objects/timeArray";
 import "../currentWeather.css";
 import Highlights from "./Highlights";
+import Search from "./Search";
 
-const CurrentWeather = ({ data }) => {
+const CurrentWeather = ({ data, handleSearch }) => {
+  //my feeble attempt at formatting date
   const year = new Date().getFullYear();
   const month =monthArray[new Date().getMonth()] ;
   const day = new Date().getDate();
   const now = `${day}-${month}-${year}`;
-
+//get present day 
   const today = daysArray[new Date().getDay()];
-  console.log(today);
+  console.log(data);
   return (
     <div className="current-weather">
+      <Search handleSearch={handleSearch}/>
       <div className="weather-icon-wrapper">
         <img src={`images/${data.weather[0].icon}.svg`} alt="weather-icon" />
       </div>
@@ -27,7 +30,7 @@ const CurrentWeather = ({ data }) => {
         <p>{`${today}, ${now}`}</p>
       </div>
       <div className="location">
-        <p>{data.name}</p>
+        <p>{data.name}, {data.sys.country}</p>
       </div>
 
       <Highlights data={data} />
