@@ -16,7 +16,9 @@ const CurrentWeather = ({ data, handleSearch }) => {
   return (
     <div className="current-weather">
       <Search handleSearch={handleSearch}/>
-      <div className="weather-icon-wrapper">
+      <div className="container-1">
+        <div className="container-2">
+        <div className="weather-icon-wrapper">
         <img src={`images/${data.weather[0].icon}.svg`} alt="weather-icon" />
       </div>
       <h1 className="current-temperature">{data.main.temp}°c</h1>
@@ -32,8 +34,13 @@ const CurrentWeather = ({ data, handleSearch }) => {
       <div className="location">
         <p>{data.name}, {data.sys.country}</p>
       </div>
-
+        </div>
+      
       <Highlights data={data} />
+      </div>
+      
+
+      
     </div>
   );
 };
