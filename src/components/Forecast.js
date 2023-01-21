@@ -12,17 +12,17 @@ import "../forecast.css";
 import { daysArray } from "../arrays&objects/timeArray";
 
 const Forecast = ({ data }) => {
+  // get dynamic array of names of days 
   const forecastedWeek = [
     ...daysArray.slice(new Date().getDay() + 1, daysArray.length),
     ...daysArray.slice(0, new Date().getDay() + 1),
   ];
 
-  console.log(forecastedWeek);
   const dataList = data.list.slice(0, 7);
-  console.log(dataList);
+  
   return (
     <div className="forecast">
-      <h2>Weather forcast for the next 7 days</h2>
+      <h2>Weekly forcast for {data.city.name}, {data.city.country}</h2>
       <div className="forecast-cards">
         {dataList.map((item, index) => {
           return (

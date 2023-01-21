@@ -6,6 +6,7 @@ const useFetch = (location,useCase) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    //fetch new data only when location and usecase (either for forcast or current weather fetches) change
     if (location) {
       fetch(
         `${WEATHER_API_URL}/${useCase}?lat=${location.lat}&lon=${location.lon}&appid=${WEATHER_API_KEY}&units=metric`
@@ -14,8 +15,6 @@ const useFetch = (location,useCase) => {
         .then((data) => setData(data));
     }
   }, [location, useCase]);
-
-  console.log(data);
   return data;
 };
 
