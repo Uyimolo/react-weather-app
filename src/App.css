@@ -15,7 +15,7 @@
   --text-dark: #d6d6d6;
 }
 body {
-  background-color: var(--bg);
+  background-color: var(--text-dark);
   height: fit-content;
 }
 .container {
@@ -32,8 +32,6 @@ body {
     height: fit-content;
     max-width: 1200px;
     padding-top:2rem ;
-    /* margin:0 auto; */
     display: flex;
-    /* height: 100vh; */
   }
 }

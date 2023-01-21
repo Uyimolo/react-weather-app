@@ -32,6 +32,7 @@ const Forecast = ({ data }) => {
               icon={item.weather[0].icon}
               temperature={item.main.temp}
               feelsLike={item.main.feels_like}
+              desc={item.weather[0].description}
             />
           );
         })}
