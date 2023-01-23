@@ -9,7 +9,7 @@ function App() {
 
   let data = useFetch(location, "weather");
   let weatherForecast = useFetch(location, "forecast");
- 
+
   useEffect(() => {
     //on first load, get current position of client
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -18,7 +18,7 @@ function App() {
   const showPosition = (position) => {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-//set location to client position 
+    //set location to client position
     setLocation({
       lat,
       lon,
@@ -34,6 +34,7 @@ function App() {
       lon,
     });
   };
+
   return (
     <div className="container">
       {data && (
