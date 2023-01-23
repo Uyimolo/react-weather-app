@@ -3,10 +3,10 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import { OPTIONS, GEO_API_URL } from "../api";
 const Search = ({ handleSearch }) => {
   //   const [searchValue, setSearchValue] = useState(null);
-//i'm using reacts AsyncPaginate search component to search for cities using the GeoDb API and getting the position (latitude and longitude) which ill send to useFetch custom hook to get new city data
-  const loadOptions = (inputValue) => {
-    return fetch(
-      `${GEO_API_URL}/cities?minPopulation=500000&namePrefix=${inputValue}`,
+  //i'm using reacts AsyncPaginate search component to search for cities using the GeoDb API and getting the position (latitude and longitude) which ill send to useFetch custom hook to get new city data
+  const loadOptions = async (inputValue) => {
+    return await fetch(
+      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
       OPTIONS
     )
       .then((response) => response.json())

@@ -18,9 +18,11 @@
   align-items: center;
   gap: 1rem;
 }
+
 .search {
   width: 100%;
   color: black;
+  border-radius: 3rem;
 }
 
 .weather-icon-wrapper {
@@ -39,7 +41,7 @@
 
 .current-weather-condition {
   font-size: 1.5em;
-  color:#ef9b00;
+  color:var(--orange);
   font-weight: 600;
   margin-top: 1rem;
 }
@@ -91,42 +93,38 @@
 }
 @media only screen and (min-width: 640px) {
   .current-weather {
-    
     /* background-color: green; */
     align-items: stretch;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
   }
   .container-1 {
     flex-direction: row;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     justify-content: space-between;
     align-items: stretch;
-    
-  }
-  .container-2{
     /* background-color: yellow; */
   }
+
   .highlights {
     flex-basis: 50%;
-    /* background-color: yellow; */
-    /* background-color: blue; */
     margin-top: 0;
   }
   .highlights-wrapper {
     gap: 2rem;
-    justify-content: space-between;
+    justify-content: center;
     align-items: baseline;
-    /* flex-wrap: nowrap; */
-    /* background-color: yellow; */
-
   }
   .highlight-card {
-    width: 45%;
+    width: 42%;
   }
 }
 @media only screen and (min-width: 1024px) {
   .current-weather {
-    flex-basis: 40%;
-    padding: 2rem 4rem !important;
+    /* flex-basis: 40%; */
+    padding: 0rem 2rem !important;
+    justify-content:center;
   }
   .container-1 {
     flex-direction: column;
