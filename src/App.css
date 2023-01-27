@@ -12,7 +12,7 @@
   --bg: #1e213af3;
   --bgDark: #0b0c14f3;
   --text: #ffffff;
-  --text-dark: #d6d6d6;
+  --text-dark: #e4e4e4;
   --orange: #ef9b00;
 }
 body {
@@ -24,46 +24,49 @@ body {
   background-color: var(--bg);
 }
 .placeholder {
-  display: none;
-}
-.placeholder.show {
   padding: 0rem 2rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   width: 100%;
+  background-color: var(--text);
 }
-.placeholder.hide {
-  display: none;
+
+.placeholder ol li {
+  color: var(--bg);
 }
 
 .placeholder img {
-  width: 100%;
-  max-width: 400px;
+  width: 70%;
+  max-width: 300px;
 }
-.placeholder h3 {
+.placeholder .heading {
   margin-bottom: 1rem;
-  max-width: 500px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 400;
+  color:var(--bg);
+  text-decoration: underline;
+
 }
+
 .placeholder span {
   font-style: italic;
-  color:var(--orange) ;
+  color: var(--orange);
 }
 @media only screen and (min-width: 1024px) {
   .container {
     position: absolute;
-    /* inset: 0 0 0 0; */
     right: 0;
     left: 0;
     margin: 2rem auto;
     width: 100%;
     height: fit-content;
     max-width: 1200px;
-    /* padding-top:2rem ; */
     overflow: hidden;
     display: flex;
-    /* border: 2px solid var(--text-dark); */
     border-radius: 0rem;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.315);
   }

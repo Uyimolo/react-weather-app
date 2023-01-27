@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import CurrentWeather from "./components/CurrentWeather";
+import PlaceHolder from './components/PlaceHolder'
 import Forecast from "./components/Forecast";
 import useFetch from "./hooks/useFetch";
 
 function App() {
   const [location, setLocation] = useState(null);
-
+  const [isData, setIsData] = useState(false)
   let data = useFetch(location, "weather");
   let weatherForecast = useFetch(location, "forecast");
+
+
 
   useEffect(() => {
     //on first load, get current position of client
@@ -35,13 +38,28 @@ function App() {
     });
   };
 
+  
+  useEffect(() => {
+    setTimeout(() => {
+      if(!data) {
+        setIsData(true)
+      }
+      else{
+        setIsData(false)
+      }
+    }, 3000);
+    
+  }, [data])
+
   return (
     <div className="container">
       {data && (
         <CurrentWeather data={data} handleSearch={handleOnSearchChange} />
       )}
       {weatherForecast && <Forecast data={weatherForecast} />}
+      {isData && <PlaceHolder />}
     </div>
+    
   );
 }
 
