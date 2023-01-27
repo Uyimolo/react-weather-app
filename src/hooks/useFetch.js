@@ -13,10 +13,10 @@ const useFetch = (location, useCase) => {
       )
         .then((res) => res.json())
         .then((data) => setData(data))
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err,'llllll'));
     }
   }, [location, useCase]);
-  console.log(data);
+  // console.log(data);
   return data;
 };
 

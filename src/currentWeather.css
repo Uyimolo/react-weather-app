@@ -39,6 +39,10 @@
   font-size: 3em;
 }
 
+.current-feels-like {
+  color: var(--text-dark);
+}
+
 .current-weather-condition {
   font-size: 1.5em;
   color:var(--orange);
